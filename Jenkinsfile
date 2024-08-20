@@ -2,27 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Frontend') {
             steps {
-                sh "echo Building - Stage 1"
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh "echo Testing - Stage 2"
-            }
-        }
-
-        stage('TestGitWebhook') {
-            steps {
-                sh "echo Git - Stage 2.5"
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh "echo Deployment - Stage 3"
+                sh "echo Building Frontend"
+                sh "cd frontend && npm install && npm run build"
             }
         }
     }
