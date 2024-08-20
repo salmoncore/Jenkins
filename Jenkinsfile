@@ -14,6 +14,12 @@ pipeline {
             }
         }
 
+        stage('TestGitWebhook') {
+            steps {
+                sh "echo Git - Stage 2.5"
+            }
+        }
+
         stage('Deploy') {
             steps {
                 sh "echo Deployment - Stage 3"
