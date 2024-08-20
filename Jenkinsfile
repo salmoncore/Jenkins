@@ -13,7 +13,7 @@ pipeline {
                 sh "echo Deploying Frontend"
                 script{
                     withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS') {
-                        sh "aws sync frontend/dist s3://inventoryman-test"
+                        sh "aws s3 sync frontend/dist s3://inventoryman-test"
                     }
                 }
             }
